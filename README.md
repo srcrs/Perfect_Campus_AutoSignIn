@@ -1,1 +1,85 @@
-# XYU-AutoSignIn
+## XYU-AutoSignIn
+
+<div align="center"> 
+<h1 align="center">信阳学院完美校园签到</h1>
+<img src="https://img.shields.io/github/issues/srcrs/XYU-AutosignIn?color=green">
+<img src="https://img.shields.io/github/stars/srcrs/XYU-AutosignIn?color=yellow">
+<img src="https://img.shields.io/github/forks/srcrs/XYU-AutosignIn?color=orange">
+<img src="https://img.shields.io/github/license/srcrs/XYU-AutosignIn?color=ff69b4">
+</div>
+
+# 简介
+
+信阳学院完美校园每日自动签到，从此让你解放双手，支持多用户批量签到。
+
+# 功能
+
+- 完美校园签到
+
+- 支持多用户批量签到
+
+- 支持推送运行结果至微信(使用server酱)
+
+- 随机温度，随机经纬度(在合适的范围内)
+
+# 使用方法
+
+## 准备
+
+- 完美校园APP账号(需要手机号和密码,若未使用需注册)
+
+- 所在学院、专业、班级(可在支付宝完美校园小程序健康打卡页面复制)
+
+- 若需推送至微信，请注册server酱，并获取其SCKEY
+
+## 1.fork本项目
+
+## 2.开启antions(默认你的actions是处于禁用状态)
+
+![](assets/img/开启actions.gif)
+
+## 3.将个人信息添加至Secrets
+
+Name - Value
+-|-
+USERS | 手机号,密码,学院-专业-班级,监护人手机号,SCKEY
+
+多用户的Value格式如下：
+
+```sh
+手机号1,密码1,学院-专业-班级1,监护人手机号1,SCKEY
+手机号2,密码2,学院-专业-班级2,监护人手机号2,
+手机号3,密码3,学院-专业-班级3,监护人手机号3,
+                    .
+                    .
+                    .
+```
+
+如需使用 [server酱](http://sc.ftqq.com/) 推送至微信，按照官网教程注册，获取其`SCKEY`。只需要在第一个用户的后面添加即可。
+
+如不需请留空，注意不要将其前面的`,`删除了。
+
+![](assets/img/添加Secrets.gif)
+
+## 4.第一次运行actions
+
+只需要一个`push`操作就会触发`actions`运行
+
+将项目`poinMe.txt`文件中的`flag`值由`0`改为`1`即可。
+
+```sh
+- flag: 0
++ flag: 1
+```
+
+![](assets/img/运行结果.gif)
+
+## 大功告成
+
+以后每天会在8:30进行自动签到。
+
+## 参考项目
+
+[HAUT_autoCheck](https://github.com/YooKing/HAUT_autoCheck)
+
+[wanmei_campus](https://github.com/zhongbr/wanmei_campus)
