@@ -23,7 +23,7 @@ def main():
             phone.append(info[0])
             password.append(info[1])
             text.append(info[2])
-            guardianPhone(info[3])
+            guardianPhone.append(info[3])
             sckey.append(info[4])
         except:
             break
