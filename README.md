@@ -1,11 +1,10 @@
-## XYU-AutoSignIn
-
 <div align="center"> 
 <h1 align="center">信阳学院完美校园签到</h1>
 <img src="https://img.shields.io/github/issues/srcrs/XYU-AutosignIn?color=green">
 <img src="https://img.shields.io/github/stars/srcrs/XYU-AutosignIn?color=yellow">
 <img src="https://img.shields.io/github/forks/srcrs/XYU-AutosignIn?color=orange">
 <img src="https://img.shields.io/github/license/srcrs/XYU-AutosignIn?color=ff69b4">
+<img src="https://img.shields.io/github/languages/code-size/srcrs/XYU-AutoSignIn?color=blueviolet">
 </div>
 
 # 简介
