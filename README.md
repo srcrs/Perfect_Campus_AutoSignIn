@@ -39,7 +39,7 @@
 
 ## 3.将个人信息添加至Secrets
 
-Name - Value
+Name | Value
 -|-
 USERS | 手机号,密码,学院-专业-班级,监护人手机号,SCKEY
 
