@@ -2,6 +2,7 @@ name: AutoSignIn
 
 on:
   push:
+  gollum:
   schedule:
     - cron: '30 0 * * *' 
 
