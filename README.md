@@ -66,7 +66,7 @@ USERS | 手机号,密码,学院-专业-班级,监护人手机号,SCKEY
 
 将项目`poinMe.txt`文件中的`flag`值由`0`改为`1`即可。
 
-```sh
+```patch
 - flag: 0
 + flag: 1
 ```
