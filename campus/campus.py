@@ -24,7 +24,7 @@ class CampusCard:
         if self.user_info['exchangeFlag']:
             self.exchange_secret()
             self.login(phone, password)
-        
+
         """
         with open(user_info[1].format(phone), 'w') as f:
             f.write(self.save_user_info())
@@ -113,63 +113,26 @@ class CampusCard:
             self.user_info["exchangeFlag"] = False
         return resp["result_"]
 
-    def get_bill(self, from_date, end_date):
-        """
-        获取指定日期范围内的校园卡消费记录
-        :param from_date: 查询开始日期
-        :param end_date: 查询结束日期
-        :return: 查询结果
-        """
-        resp = requests.post(
-            "http://server.17wanxiao.com/YKT_Interface/xyk",
-            headers={
-                "Referer": "http://server.17wanxiao.com/YKT_Interface/v2/index.html"
-                           "?utm_source=app"
-                           "&utm_medium=plugin"
-                           "&UAinfo=wanxiao"
-                           "&versioncode={args[wanxiaoVersion]}"
-                           "&customerId=504"
-                           "&systemType=Android"
-                           "&token={args[sessionId]}".format(args=self.user_info),
-                "Origin": "http://server.17wanxiao.com",
-                "User-Agent": "Mozilla/5.0 (Linux; Android 5.1.1; HUAWEI MLA-AL10 Build/HUAWEIMLA-AL10; wv) "
-                              "AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.136 Mobile "
-                              "Safari/537.36 Wanxiao/4.6.2",
-            },
-            data={
-                "token": self.user_info["sessionId"],
-                "method": "XYK_TRADE_DETAIL",
-                "param": '{"beginDate":"' + from_date + '","endDate":"' + end_date + '","beginIndex":0,"count":20}'
-            },
-            verify=False
-        ).json()
-        return json.loads(resp["body"])
-
     def get_main_info(self):
         resp = requests.post(
-            "https://server.17wanxiao.com/YKT_Interface/xyk",
+            "https://reportedh5.17wanxiao.com/api/clock/school/getUserInfo",
             headers={
-                "Referer": "https://server.17wanxiao.com/YKT_Interface/v2/index.html"
-                           "?utm_source=app"
-                           "&utm_medium=card"
-                           "&UAinfo=wanxiao"
-                           "&versioncode={args[wanxiaoVersion]}"
-                           "&customerId=504"
-                           "&systemType=Android"
-                           "&token={args[sessionId]}".format(args=self.user_info),
-                "Origin": "https://server.17wanxiao.com",
+                "Referer": "https://reportedh5.17wanxiao.com/collegeHealthPunch/index.html?token="+self.user_info["sessionId"],
+                "Origin": "https://reportedh5.17wanxiao.com",
                 "User-Agent": "Mozilla/5.0 (Linux; Android 5.1.1; HUAWEI MLA-AL10 Build/HUAWEIMLA-AL10; wv) "
                               "AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.136 Mobile "
                               "Safari/537.36 Wanxiao/4.6.2",
             },
             data={
                 "token": self.user_info["sessionId"],
-                "method": "XYK_BASE_INFO",
-                "param": "{}"
+                "appClassify": "DK"
             },
             verify=False
         ).json()
-        return json.loads(resp["body"])
+        if resp["msg"] == '成功':
+             return resp["userInfo"]
+        print(resp)
+        return resp
 
     def save_user_info(self):
         """
