@@ -1,10 +1,10 @@
 <div align="center"> 
 <h1 align="center">信阳学院完美校园签到</h1>
-<img src="https://img.shields.io/github/issues/srcrs/XYU-AutosignIn?color=green">
-<img src="https://img.shields.io/github/stars/srcrs/XYU-AutosignIn?color=yellow">
-<img src="https://img.shields.io/github/forks/srcrs/XYU-AutosignIn?color=orange">
-<img src="https://img.shields.io/github/license/srcrs/XYU-AutosignIn?color=ff69b4">
-<img src="https://img.shields.io/github/languages/code-size/srcrs/XYU-AutoSignIn?color=blueviolet">
+<img src="https://img.shields.io/github/issues/srcrs/Perfect_Campus_AutoSignIn?color=green">
+<img src="https://img.shields.io/github/stars/srcrs/Perfect_Campus_AutoSignIn?color=yellow">
+<img src="https://img.shields.io/github/forks/srcrs/Perfect_Campus_AutoSignIn?color=orange">
+<img src="https://img.shields.io/github/license/srcrs/Perfect_Campus_AutoSignIn?color=ff69b4">
+<img src="https://img.shields.io/github/languages/code-size/srcrs/Perfect_Campus_AutoSignIn?color=blueviolet">
 </div>
 
 # 简介
@@ -25,9 +25,9 @@
 
 ## 准备
 
-- 完美校园`APP`账号(需要手机号和密码,若未使用过，需注册并绑定校园卡)
+- 完美校园`APP`账号(需要手机号和密码,若未使用过，需在健康打卡页面完善个人信息)
 
-- 所在学院、专业、班级(可在支付宝完美校园小程序健康打卡页面复制)
+- 监护人手机号
 
 - 若需推送至微信，请注册`server`酱，并获取其`SCKEY`
 
@@ -41,14 +41,14 @@
 
 Name | Value
 -|-
-USERS | 手机号,密码,学院-专业-班级,监护人手机号,SCKEY
+USERS | 手机号,密码,监护人手机号,SCKEY
 
 多用户的`Value`格式如下：
 
 ```sh
-手机号1,密码1,学院-专业-班级1,监护人手机号1,SCKEY
-手机号2,密码2,学院-专业-班级2,监护人手机号2,
-手机号3,密码3,学院-专业-班级3,监护人手机号3,
+手机号1,密码1,监护人手机号1,SCKEY
+手机号2,密码2,监护人手机号2,
+手机号3,密码3,监护人手机号3,
                     .
                     .
                     .
