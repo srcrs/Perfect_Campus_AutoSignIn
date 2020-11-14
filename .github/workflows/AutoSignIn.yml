@@ -4,7 +4,7 @@ on:
   push:
   gollum:
   schedule:
-    - cron: '30 0 * * *' 
+    - cron: '00 23 * * *' 
 
 jobs:
   AutoSignIn:
