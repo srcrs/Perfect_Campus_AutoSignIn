@@ -59,7 +59,6 @@ class CampusCard:
             "https://server.17wanxiao.com/campus/cam_iface46/exchangeSecretkey.action",
             headers={
                 "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 5.1.1; HUAWEI MLA-AL10 Build/HUAWEIMLA-AL10)",
-                 "Connection": "close",
             },
             json={
                 "key": self.user_info["rsaKey"]["public"]
