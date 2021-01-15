@@ -46,11 +46,11 @@ def main():
                 msg = value[-4:] + "打卡异常-" + strTime
                 time.sleep(15)
             print(response.text)
-            except Exception as err:
-                print(err)
-                msg = "出现错误"
-                failure.append(value[-4:])
-                break
+        except Exception as err:
+            print(err)
+            msg = "出现错误"
+            failure.append(value[-4:])
+            break
         print(msg)
         print("-----------------------")
     fail = sorted(set(failure),key=failure.index)
